@@ -1,0 +1,15 @@
+Function GaussTail(w, x)
+    wave w
+    variable x
+   
+    variable bg, offset, rgauss, rtail, rtn
+   
+    offset = w[3] - w[5]
+    bg = w[0]*x + w[1] 
+    rgauss =  w[2]*exp(-(x - w[3])^2/(2*w[4]^2)
+    rtail = w[2]*exp(w[5]*(2*x - 2*w[3] + w[5])/(2*w[4]^2)
+
+    rtn = x < offset ? rtail : rgauss
+   
+    return (rtn + bg)
+end
